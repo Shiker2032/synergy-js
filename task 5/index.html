@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Задача 5</title>
+  </head>
+  <style>
+    .container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+  <body>
+    <div class="container">
+      <input type="text" id="textInput" />
+      <button id="saveButton">Сохранить</button>
+    </div>
+
+    <script>
+      // Получаем элементы input и кнопку
+      let input = document.getElementById("textInput");
+      let saveButton = document.getElementById("saveButton");
+
+      // Обработчик события клика на кнопке
+      saveButton.addEventListener("click", function () {
+        // Получаем текст из input
+        let text = input.value;
+        // Сохраняем текст в localStorage под ключом 'Text'
+        localStorage.setItem("Text", text);
+        console.log("Текст сохранен в localStorage:", text);
+
+        // Отображаем сообщение в консоли через 2 секунды
+        setTimeout(function () {
+          let savedText = localStorage.getItem("Text");
+          console.log("Сохраненный текст из localStorage:", savedText);
+        }, 2000);
+      });
+    </script>
+  </body>
+</html>

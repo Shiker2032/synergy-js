@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Задача 4</title>
+  </head>
+  <style>
+    .container {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+  </style>
+  <body>
+    <div class="container">
+      <input type="number" id="num1" />
+      <input type="number" id="num2" />
+      <button onclick="add()">Сложить</button>
+      <button onclick="subtract()">Вычесть</button>
+      <button onclick="multiply()">Умножить</button>
+      <button onclick="divide()">Разделить</button>
+    </div>   
+      <h2 id="result"></h2>
+    <script>
+      let calculator = {
+        add: function (a, b) {
+          if (isNaN(a) | isNaN(b)) {
+            return "Ошибка: оба аргумента должны быть числами";
+          }
+          return a + b;
+        },
+        subtract: function (a, b) {
+          if (isNaN(a) | isNaN(b)) {
+            return "Ошибка: оба аргумента должны быть числами";
+          }
+          return a - b;
+        },
+        multiply: function (a, b) {
+          if (isNaN(a) | isNaN(b)) {
+            return "Ошибка: оба аргумента должны быть числами";
+          }
+          return a * b;
+        },
+        divide: function (a, b) {
+          if (isNaN(a) | isNaN(b)) {
+            return "Ошибка: оба аргумента должны быть числами";
+          }
+          if (b === 0) {
+            return "Ошибка: деление на ноль";
+          }
+          return a / b;
+        },
+      };
+
+      // Функции для вызова методов калькулятора и вывода результатов
+      function add() {
+        let num1 = parseFloat(document.getElementById("num1").value);
+        let num2 = parseFloat(document.getElementById("num2").value);
+        document.getElementById("result").textContent =
+          "Результат: " + calculator.add(num1, num2);
+      }
+
+      function subtract() {
+        let num1 = parseFloat(document.getElementById("num1").value);
+        let num2 = parseFloat(document.getElementById("num2").value);
+        document.getElementById("result").textContent =
+          "Результат: " + calculator.subtract(num1, num2);
+      }
+
+      function multiply() {
+        let num1 = parseFloat(document.getElementById("num1").value);
+        let num2 = parseFloat(document.getElementById("num2").value);
+        document.getElementById("result").textContent =
+          "Результат: " + calculator.multiply(num1, num2);
+      }
+
+      function divide() {
+        let num1 = parseFloat(document.getElementById("num1").value);
+        let num2 = parseFloat(document.getElementById("num2").value);
+        document.getElementById("result").textContent =
+          "Результат: " + calculator.divide(num1, num2);
+      }
+    </script>
+  </body>
+</html>

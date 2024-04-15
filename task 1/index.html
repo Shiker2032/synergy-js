@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Задача 1</title>
+  </head>
+  <style>
+    .container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+  <body>
+    <div class="container" id="container"></div>
+  </body>
+  <script>
+    // Создаем новый элемент h1
+    let h1El = document.createElement("h1");
+
+    // Задаем текст "Hello World!" для элемента h1
+    h1El.textContent = "Hello World!";
+
+    // Добавляем элемент h1 на страницу
+    document.getElementById("container").append(h1El);
+  </script>
+</html>
